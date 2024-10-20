@@ -120,7 +120,8 @@
   position: absolute;
   left: 4px;
   top: 3px;
- background: linear-gradient(180deg, #ffcc89, #d8860b);
+ /* background: linear-gradient(180deg, #ffcc89, #d8860b); */
+ background: linear-gradient(180deg, #777, #3a3a3a);
 
   border-radius: 180px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
@@ -138,7 +139,8 @@
 }
 
 .input:checked + .theme-btn .theme-toggle:after {
-  background: linear-gradient(180deg, #777, #3a3a3a);
+ background: linear-gradient(180deg, #ffcc89, #d8860b);
+
 }
 
 .theme-btn .icons {
@@ -150,30 +152,30 @@
 
 .theme-btn .icons i.bx-sun {
   margin-left: 9px;
-  color: #fff;
+  color: #7e7e7e;
   transition: 0.3s;
 }
 
 .theme-btn .icons i.bxs-moon {
   margin-left: 10px;
   margin-top: 3px;
-  color: #7e7e7e;
+  color: #fff;
 
   transition: 0.3s;
 }
 
 
 .input:checked + .theme-btn .icons i.bxs-moon {
-  color: #fff;
+  color: #7e7e7e;
 }
 
 .input:checked + .theme-btn .icons i.bx-sun {
-  color: #7e7e7e;
+  color: #fff;
   
 }
 
 .input:checked + .theme-btn .theme-toggle {
-  background: linear-gradient(180deg, #777, #3a3a3a);
+ background: linear-gradient(180deg, #ffcc89, #d8860b);
 
 }
 

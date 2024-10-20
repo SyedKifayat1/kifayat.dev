@@ -10,24 +10,59 @@ function Header() {
     else header.classList.remove("scroll-header");
   });
 
-  // ================== Toggle Menu ====================//
+  // // ================== Toggle Menu ====================//
+  // const [Toggle, showMenu] = useState(false);
+  // const [activeNav, setActiveNav] = useState("#home");
+
+  // useEffect(() => {
+  //   const themeBtn = document.querySelector(".theme-btn");
+  //   const getCurrentTheme = () =>
+  //     document.body.classList.contains("dark-theme") ? "dark" : "light";
+  //   const getCurrentIcon = () =>
+  //     themeBtn.classList.contains("sun") ? "sun" : "moon";
+  //   const toggleTheme = () => {
+  //     document.body.classList.toggle("dark-theme");  
+  //   };
+  //   themeBtn.addEventListener("click", toggleTheme);
+  //   return () => {
+  //     themeBtn.removeEventListener("click", toggleTheme);
+  //   };
+  // }, []);
+
   const [Toggle, showMenu] = useState(false);
   const [activeNav, setActiveNav] = useState("#home");
 
   useEffect(() => {
     const themeBtn = document.querySelector(".theme-btn");
-    const getCurrentTheme = () =>
-      document.body.classList.contains("dark-theme") ? "dark" : "light";
-    const getCurrentIcon = () =>
-      themeBtn.classList.contains("sun") ? "sun" : "moon";
+
+    // Set dark theme and moon icon by default
+    if (!document.body.classList.contains("dark-theme")) {
+      document.body.classList.add("dark-theme");
+    }
+
+    if (!themeBtn.classList.contains("moon")) {
+      themeBtn.classList.add("moon"); // Set moon icon by default for dark theme
+    }
+
     const toggleTheme = () => {
-      document.body.classList.toggle("dark-theme");  
+      // Toggle dark/light theme on body
+      document.body.classList.toggle("dark-theme");
+
+      // Toggle between moon and sun icons on the theme button
+      if (themeBtn.classList.contains("moon")) {
+        themeBtn.classList.replace("moon", "sun"); // Switch to sun icon for light mode
+      } else {
+        themeBtn.classList.replace("sun", "moon"); // Switch to moon icon for dark mode
+      }
     };
+
     themeBtn.addEventListener("click", toggleTheme);
+
     return () => {
       themeBtn.removeEventListener("click", toggleTheme);
     };
   }, []);
+
 
   return (
     <header className="header">
@@ -112,7 +147,7 @@ function Header() {
                 <i className="uil uil-message nav__icon"></i> Contact
               </a>
             </li>
-            
+
           </ul>
           <i
             className="uil uil-times nav__close"
@@ -120,17 +155,16 @@ function Header() {
           ></i>
         </div>
 
-       
+
         <div className="toggle-bottom">
-         
+
 
           <input type="checkbox" id="darkmode-toggle" className="input" />
-          <label for="darkmode-toggle" className={Toggle?"display-none":"theme-btn"}>
+          <label for="darkmode-toggle" className={Toggle ? "display-none" : "theme-btn"}>
             <div className="theme-toggle"></div>
             <div className="icons">
-              
-              <i className="bx bx-sun"></i>
               <i className="bx bxs-moon"></i>
+              <i className="bx bx-sun"></i>
             </div>
           </label>
 
