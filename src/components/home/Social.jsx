@@ -9,7 +9,7 @@ function Social() {
         <a href="https://dribbble.com/" className="home__social-icon" target={'_blank'}>
         <i class="uil uil-dribbble"></i>
         </a>
-        <a href="https://github.com/bsce22026" className="home__social-icon" target={'_blank'}>
+        <a href="https://github.com/SyedKifayat1" className="home__social-icon" target={'_blank'}>
         <i class="uil uil-github-alt"></i>
         </a>
     </div>
